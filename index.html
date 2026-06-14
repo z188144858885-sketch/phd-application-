@@ -1,0 +1,1164 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NUS PhD Application Workspace</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --bg: #f7f8f6;
+      --panel: #ffffff;
+      --ink: #17201b;
+      --muted: #64706a;
+      --line: #dce3dd;
+      --accent: #0f6b5f;
+      --accent-2: #8b3f38;
+      --accent-3: #22577a;
+      --soft: #edf5f2;
+      --soft-2: #f7eee9;
+      --soft-3: #eef3f8;
+      --shadow: 0 16px 45px rgba(23, 32, 27, 0.08);
+      --radius: 8px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.55;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .shell {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+    }
+
+    aside {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      padding: 28px 22px;
+      border-right: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(10px);
+      overflow-y: auto;
+    }
+
+    .brand {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-3));
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.22;
+      letter-spacing: 0;
+    }
+
+    .brand p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    nav {
+      display: grid;
+      gap: 6px;
+    }
+
+    nav a {
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 11px;
+      border-radius: 8px;
+      font-size: 14px;
+      border: 1px solid transparent;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: var(--soft);
+      border-color: #d2e6df;
+      text-decoration: none;
+    }
+
+    .side-note {
+      margin-top: 28px;
+      padding: 12px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #fbfcfb;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    main {
+      min-width: 0;
+    }
+
+    .hero {
+      min-height: 460px;
+      padding: 42px clamp(20px, 5vw, 58px) 34px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+      gap: 28px;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(120deg, rgba(255,255,255,.92), rgba(255,255,255,.65)),
+        radial-gradient(circle at 72% 20%, rgba(15, 107, 95, .13), transparent 34%),
+        radial-gradient(circle at 90% 75%, rgba(139, 63, 56, .11), transparent 30%),
+        #f8faf8;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .hero h2 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(28px, 3.8vw, 44px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      margin: 18px 0 0;
+      max-width: 720px;
+      color: #425048;
+      font-size: 17px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 28px;
+      max-width: 880px;
+    }
+
+    .meta {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 13px;
+    }
+
+    .meta strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.15;
+    }
+
+    .meta span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .map-card {
+      background: rgba(255,255,255,.82);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .map-head {
+      padding: 16px 18px 0;
+    }
+
+    .map-head h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .map-head p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .research-map {
+      width: 100%;
+      height: auto;
+      display: block;
+      padding: 4px;
+    }
+
+    .content {
+      padding: 32px clamp(18px, 5vw, 58px) 64px;
+      display: grid;
+      gap: 28px;
+    }
+
+    section {
+      scroll-margin-top: 24px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: end;
+      margin-bottom: 14px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .grid-3,
+    .grid-2 {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 10px 24px rgba(23, 32, 27, 0.04);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+    .card p,
+    .card li {
+      color: #3f4c45;
+      font-size: 14px;
+    }
+
+    .card p {
+      margin: 0;
+    }
+
+    .card ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: #315d55;
+      font-size: 12px;
+      border: 1px solid #d7e7e2;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 160px minmax(0, 1fr);
+      gap: 14px;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .timeline-item:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .date {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--accent-3);
+      padding-top: 3px;
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 4px;
+      font-size: 15px;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin: 10px 0 16px;
+    }
+
+    .search {
+      flex: 1 1 260px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 9px 11px;
+    }
+
+    .search input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      font: inherit;
+      color: var(--ink);
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    button {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      border-radius: 8px;
+      padding: 9px 11px;
+      font: inherit;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    button:hover,
+    button.active {
+      border-color: #b5d4cc;
+      background: var(--soft);
+      color: #174d45;
+    }
+
+    .supervisor-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .supervisor {
+      display: grid;
+      grid-template-columns: 64px minmax(0, 1fr) minmax(220px, .35fr);
+      gap: 16px;
+      align-items: start;
+      padding: 16px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .rank {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: #fff;
+      background: var(--accent);
+      font-weight: 800;
+      font-size: 17px;
+    }
+
+    .supervisor h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .unit {
+      margin: 3px 0 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .direction {
+      margin: 0;
+      color: #3f4c45;
+      font-size: 14px;
+    }
+
+    .fit-box {
+      display: grid;
+      gap: 8px;
+      justify-items: start;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .fit {
+      color: #fff;
+      background: var(--accent-3);
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .fit.high {
+      background: var(--accent);
+    }
+
+    .fit.medium {
+      background: var(--accent-2);
+    }
+
+    .doc-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .doc {
+      padding: 15px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      min-height: 118px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .doc strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .doc span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .event-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 17px;
+      display: grid;
+      gap: 10px;
+      box-shadow: 0 10px 24px rgba(23, 32, 27, 0.04);
+    }
+
+    .event-card h3 {
+      margin: 0;
+      font-size: 17px;
+    }
+
+    .event-card p {
+      margin: 0;
+      color: #3f4c45;
+      font-size: 14px;
+    }
+
+    .event-status {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      min-height: 26px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: var(--soft-2);
+      color: var(--accent-2);
+      border: 1px solid #ead8d0;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .event-status.info {
+      background: var(--soft-3);
+      color: var(--accent-3);
+      border-color: #d3e0eb;
+    }
+
+    .event-meta {
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .event-meta div {
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+    }
+
+    .event-meta strong {
+      color: var(--ink);
+      min-width: 92px;
+    }
+
+    .action-list {
+      counter-reset: step;
+      display: grid;
+      gap: 10px;
+    }
+
+    .action {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+    }
+
+    .action::before {
+      content: counter(step);
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: var(--soft-3);
+      color: var(--accent-3);
+      font-weight: 800;
+    }
+
+    .action h3 {
+      margin: 0 0 4px;
+      font-size: 15px;
+    }
+
+    .action p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 22px clamp(18px, 5vw, 58px);
+      color: var(--muted);
+      font-size: 12px;
+      border-top: 1px solid var(--line);
+      background: #fff;
+    }
+
+    @media (max-width: 1120px) {
+      .shell {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        position: static;
+        height: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      nav {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .doc-grid,
+      .event-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 820px) {
+      nav,
+      .grid-3,
+      .grid-2,
+      .meta-grid,
+      .event-grid,
+      .doc-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 30px;
+      }
+
+      .supervisor,
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      .rank {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside>
+      <div class="brand">
+        <div class="brand-mark">NUS</div>
+        <h1>PhD Application Workspace / 博士申请工作台</h1>
+        <p>2027 August intake · Cancer biology / glioma mechanisms<br>2027 年 8 月入学 · 癌症生物学 / 胶质瘤机制</p>
+      </div>
+      <nav aria-label="Page sections">
+        <a href="#overview" class="active">Overview / 概览 <span>01</span></a>
+        <a href="#profile">Profile / 画像 <span>02</span></a>
+        <a href="#supervisors">Supervisors / 导师 <span>03</span></a>
+        <a href="#documents">Documents / 文档 <span>04</span></a>
+        <a href="#events">Events / 宣讲会 <span>05</span></a>
+        <a href="#next">Next Steps / 下一步 <span>06</span></a>
+      </nav>
+      <div class="side-note">
+        This page consolidates the current local project files into a browsable application dashboard.<br>
+        本页将当前本地申请材料整合成一个可浏览的申请工作台。
+      </div>
+    </aside>
+
+    <main>
+      <header class="hero" id="overview">
+        <div>
+          <p class="eyebrow">Research application dashboard / 科研申请工作台</p>
+          <h2>NUS PhD application materials, supervisor fit, and outreach priorities.<br>NUS 博士申请材料、导师匹配与联系优先级。</h2>
+          <p class="hero-copy">
+            This workspace centers on the NUS PhD application for the August 2027 intake. It uses the PTPN11 glioma/MAPK-ERK mechanism project as the core story, supported by CRISPR-Cas9 off-target analysis, protein interaction work, and immunodetection platforms.
+            <br><br>
+            当前项目聚焦 NUS 2027 年 8 月 PhD 申请，以 PTPN11 胶质瘤/MAPK-ERK 机制项目为主线，
+            结合 CRISPR-Cas9 脱靶分析、蛋白互作与免疫检测平台，形成一套可用于导师联系和材料写作的申请资产。
+          </p>
+          <div class="meta-grid">
+            <div class="meta"><strong>NUS</strong><span>Target school / 目标学校</span></div>
+            <div class="meta"><strong>Aug 2027</strong><span>Intake goal / 入学时间</span></div>
+            <div class="meta"><strong>13</strong><span>Matched supervisors / 匹配导师</span></div>
+            <div class="meta"><strong>5 files</strong><span>Project assets / 项目文件</span></div>
+          </div>
+        </div>
+        <div class="map-card" aria-label="Research positioning map">
+          <div class="map-head">
+            <h3>Research Fit Map / 研究匹配图</h3>
+            <p>Three application storylines and how they connect to NUS supervisor fit.<br>申请叙事的三条主线与 NUS 导师匹配方式。</p>
+          </div>
+          <svg class="research-map" viewBox="0 0 560 360" role="img" aria-label="Cancer mechanisms connected with CRISPR and protein platform">
+            <defs>
+              <linearGradient id="nodeA" x1="0%" x2="100%">
+                <stop offset="0%" stop-color="#0f6b5f"/>
+                <stop offset="100%" stop-color="#22577a"/>
+              </linearGradient>
+              <linearGradient id="nodeB" x1="0%" x2="100%">
+                <stop offset="0%" stop-color="#8b3f38"/>
+                <stop offset="100%" stop-color="#c67852"/>
+              </linearGradient>
+            </defs>
+            <rect x="26" y="28" width="508" height="300" rx="14" fill="#f8fbfa" stroke="#dce3dd"/>
+            <path d="M170 176 C230 90, 330 92, 390 176" fill="none" stroke="#b8d5cd" stroke-width="5"/>
+            <path d="M170 176 C238 240, 318 245, 390 176" fill="none" stroke="#d7c6bd" stroke-width="5"/>
+            <path d="M280 96 L280 256" stroke="#c9d7df" stroke-width="5"/>
+            <circle cx="170" cy="176" r="58" fill="url(#nodeA)"/>
+            <circle cx="390" cy="176" r="58" fill="url(#nodeB)"/>
+            <circle cx="280" cy="96" r="46" fill="#eef3f8" stroke="#abc2d1" stroke-width="2"/>
+            <circle cx="280" cy="256" r="46" fill="#edf5f2" stroke="#a8ccc2" stroke-width="2"/>
+            <text x="170" y="164" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">PTPN11</text>
+            <text x="170" y="184" text-anchor="middle" fill="#fff" font-size="13">Glioma</text>
+            <text x="390" y="164" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">NUS PI</text>
+            <text x="390" y="184" text-anchor="middle" fill="#fff" font-size="13">Fit</text>
+            <text x="280" y="91" text-anchor="middle" fill="#22577a" font-size="13" font-weight="700">CRISPR</text>
+            <text x="280" y="109" text-anchor="middle" fill="#22577a" font-size="11">Off-target</text>
+            <text x="280" y="251" text-anchor="middle" fill="#0f6b5f" font-size="13" font-weight="700">Protein</text>
+            <text x="280" y="269" text-anchor="middle" fill="#0f6b5f" font-size="11">AP / ELISA</text>
+            <text x="280" y="176" text-anchor="middle" fill="#5d6b64" font-size="12">Mechanism + validation</text>
+          </svg>
+        </div>
+      </header>
+
+      <div class="content">
+        <section id="profile">
+          <div class="section-head">
+            <div>
+              <h2>Application Profile / 申请画像</h2>
+            </div>
+          </div>
+
+          <div class="grid-3">
+            <article class="card">
+              <h3>Core story / 核心叙事</h3>
+              <p>The core story is built around the PTPN11 glioma project, emphasizing MAPK/ERK pathway validation, ERK phosphorylation analysis, and glioma cell proliferation/migration/invasion phenotypes.<br><br>以 PTPN11 胶质瘤项目作为主线，突出 MAPK/ERK pathway validation、ERK phosphorylation analysis，以及 glioma cell proliferation/migration/invasion phenotypes。</p>
+              <div class="tag-row">
+                <span class="tag">PTPN11</span>
+                <span class="tag">MAPK/ERK</span>
+                <span class="tag">Glioma</span>
+              </div>
+            </article>
+            <article class="card">
+              <h3>Method advantage / 方法优势</h3>
+              <p>The Sanger experience provides a credible method advantage in CRISPR-Cas9 gRNA ranking, Cas-OFFinder/CRISPOR, off-target assessment, and standardized analysis reporting.<br><br>Sanger 经历提供 CRISPR-Cas9 gRNA ranking、Cas-OFFinder/CRISPOR、off-target assessment 与标准化分析报告经验。</p>
+              <div class="tag-row">
+                <span class="tag">CRISPR-Cas9</span>
+                <span class="tag">Linux</span>
+                <span class="tag">gRNA</span>
+              </div>
+            </article>
+            <article class="card">
+              <h3>Platform depth / 技术平台</h3>
+              <p>The CUHK protein-interaction project and InnoBio R&D internship support experience in protein expression/purification, AP, Western Blot, ELISA, and mechanistic validation.<br><br>CUHK 蛋白互作课题和英诺生物研发经历支撑 protein expression/purification、AP、Western Blot、ELISA 和机制验证能力。</p>
+              <div class="tag-row">
+                <span class="tag">GST purification</span>
+                <span class="tag">AP</span>
+                <span class="tag">ELISA</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="grid-2" style="margin-top:14px">
+            <article class="card">
+              <h3>Education / 教育背景</h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="date">2025.09 - 2026.10</div>
+                  <div>
+                    <h3>CUHK MSc in Biochemistry and Biomedical Sciences</h3>
+                    <p>English-taught MSc programme; thesis project focuses on the interaction mechanism between SARS-CoV-2 N protein and host kinase SRPK2.<br>全英授课；硕士课题聚焦 SARS-CoV-2 N protein 与 host kinase SRPK2 互作机制。</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="date">2021.09 - 2025.06</div>
+                  <div>
+                    <h3>SCAU & UCD BSc Biological Sciences</h3>
+                    <p>Top 15% GPA ranking; SCAU 87.69/100; UCD 3.63/4.0; third-class scholarships in 2024 and 2025.<br>GPA 前 15%；SCAU 87.69/100；UCD 3.63/4.0；2024 与 2025 三等奖学金。</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <h3>Needs before formal submission / 还需补强</h3>
+              <ul>
+                <li>Complete the formal citation, CPCI/proceedings proof, author order, and DOI/indexing page for the PTPN11 conference paper.<br>补齐 PTPN11 conference paper 的正式 citation、CPCI/proceedings proof、作者顺序与 DOI/检索页。</li>
+                <li>Split the profile into 2-3 PI-specific research narratives.<br>按具体导师拆分 2-3 条更精确的研究叙事。</li>
+                <li>Bridge the CUHK viral protein-interaction project into protein interaction, kinase regulation, and molecular mechanism training.<br>CUHK 病毒蛋白互作课题需桥接为 protein interaction、kinase regulation 和 molecular mechanism training。</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="supervisors">
+          <div class="section-head">
+            <div>
+              <h2>Supervisor Priority List / 导师优先级</h2>
+              <p>The bilingual third-person supervisor list is converted here into a searchable browsing view.<br>中英双语第三方口吻名单在这里转成可筛选浏览版。</p>
+            </div>
+          </div>
+
+          <div class="toolbar">
+            <label class="search" aria-label="Search supervisors">
+              <span>⌕</span>
+              <input id="searchInput" type="search" placeholder="Search professor, unit, direction, method... / 搜索导师、单位、方向、方法...">
+            </label>
+          </div>
+
+          <div class="supervisor-list" id="supervisorList"></div>
+        </section>
+
+        <section id="documents">
+          <div class="section-head">
+            <div>
+              <h2>Project Documents / 项目文档</h2>
+              <p>All project files are linked here for drafting emails, preparing SOP materials, or reviewing before sharing with a mentor.<br>当前项目所有文件入口，适合继续写邮件、做 SOP 或发给导师前复核。</p>
+            </div>
+          </div>
+          <div class="doc-grid">
+            <a class="doc" href="CV.pdf">
+              <strong>CV.pdf</strong>
+              <span>Original CV / 原始简历</span>
+            </a>
+            <a class="doc" href="Goal.md">
+              <strong>Goal.md</strong>
+              <span>NUS target, 2027 intake, research directions / NUS 目标、2027 入学、研究方向</span>
+            </a>
+            <a class="doc" href="memory.md">
+              <strong>memory.md</strong>
+              <span>Application profile / 申请画像</span>
+            </a>
+            <a class="doc" href="NUS_supervisor_merged_list.md">
+              <strong>Supervisor List.md</strong>
+              <span>Bilingual supervisor fit list / 中英双语导师匹配名单</span>
+            </a>
+            <a class="doc" href="NUS_supervisor_merged_list.docx">
+              <strong>Supervisor List.docx</strong>
+              <span>Word version for sharing / 便于发送的 Word 版本</span>
+            </a>
+          </div>
+        </section>
+
+        <section id="events">
+          <div class="section-head">
+            <div>
+              <h2>NUS Information Sessions / NUS 宣讲会信息</h2>
+              <p>Current public information related to NUS information sessions in Shenzhen and Hong Kong, China. This section includes both directly relevant findings and adjacent reference links.<br>这里整理目前公开可查的 NUS 在深圳和中国香港相关宣讲会信息；包含直接相关结果，也包含可继续监测的参考入口。</p>
+            </div>
+          </div>
+
+          <div class="event-grid">
+            <article class="event-card">
+              <span class="event-status">No direct PhD/life-science session found / 未找到直接相关场次</span>
+              <h3>Shenzhen / 深圳</h3>
+              <p>No current public NUS PhD or life-science admissions information session in Shenzhen was found in the current search. Two Shenzhen-related NUS items were found, but neither is a direct PhD/life-science admissions session.<br>当前检索未发现 NUS 在深圳公开发布的 PhD 或生命科学方向招生宣讲会。找到两个深圳相关 NUS 信息，但均不是直接的 PhD/生命科学招生宣讲。</p>
+              <div class="event-meta">
+                <div><strong>Related / 相关</strong><span><a href="https://nus.edu.sg/cfg/events/details/b07e707507d0f5850ed42e95b102bf25" target="_blank" rel="noreferrer">Shenzhen Talent Initiative (NUS Session)</a>: NUS on-campus recruitment talk for STEM postgraduates, 23 Mar 2026.</span></div>
+                <div><strong>Related / 相关</strong><span><a href="https://career.cuhk.edu.cn/lecture/view/id/1591" target="_blank" rel="noreferrer">CUHK-Shenzhen NUS master's online session</a>: NUS English, Linguistics and Theatre Studies master's programmes, 14 Nov 2025.</span></div>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <span class="event-status">No current public session found / 未找到当前公开场次</span>
+              <h3>Hong Kong, China / 中国香港</h3>
+              <p>No current public NUS information session specifically located in Hong Kong, China was found in the current search. The recommended approach is to monitor official NUS event pages and programme pages for new regional sessions.<br>当前检索未发现 NUS 在中国香港举办的公开宣讲会信息。建议持续关注 NUS 官方活动页和项目页，等待后续区域宣讲或线上说明会更新。</p>
+              <div class="event-meta">
+                <div><strong>Monitor / 关注</strong><span><a href="https://masters.nus.edu.sg/events" target="_blank" rel="noreferrer">NUS Master's Events</a>: official event list for NUS postgraduate coursework sessions.</span></div>
+                <div><strong>Monitor / 关注</strong><span><a href="https://nusgs.nus.edu.sg/newsfeed/183053" target="_blank" rel="noreferrer">NUS Graduate School newsfeed</a>: postgraduate news and events.</span></div>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <span class="event-status info">Programme reference / 项目参考</span>
+              <h3>Biological Sciences PhD / 生物科学博士</h3>
+              <p>The NUS Biological Sciences PhD page is not a roadshow page, but it is directly relevant to the applicant's target direction. It states application timelines and requirements for the August 2027 intake pathway.<br>NUS Biological Sciences PhD 页面不是宣讲会页面，但与申请目标方向直接相关；其中列出申请时间线和 August 2027 intake 相关要求。</p>
+              <div class="event-meta">
+                <div><strong>Link / 链接</strong><span><a href="https://www.dbs.nus.edu.sg/education/graduates/doctor-of-philosophy/" target="_blank" rel="noreferrer">NUS Biological Sciences PhD</a></span></div>
+                <div><strong>Note / 备注</strong><span>For August 2027, the regular deadline shown on the page is 15 Nov 2026; early-offer information is also listed.</span></div>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <span class="event-status info">How to use this / 使用建议</span>
+              <h3>Tracking plan / 跟踪计划</h3>
+              <p>For now, this section should be treated as a monitoring board rather than a confirmed event schedule. If new NUS Shenzhen or Hong Kong sessions appear, add the date, venue, programme scope, registration link, and relevance to the applicant's PhD direction.<br>目前该板块应作为信息跟踪板，而不是已确认的宣讲日程。若后续出现 NUS 深圳或中国香港场次，应补充日期、地点、项目范围、报名链接，以及与申请人 PhD 方向的相关性。</p>
+              <div class="event-meta">
+                <div><strong>Priority / 优先</strong><span>Life sciences, medicine, cancer biology, graduate school, NUSGS, DBS, Medicine, CSI.</span></div>
+                <div><strong>Frequency / 频率</strong><span>Check before each outreach batch or before sending materials to a mentor.</span></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="next">
+          <div class="section-head">
+            <div>
+              <h2>Next Steps / 下一步</h2>
+              <p>The recommended next move is to turn the completed profile and supervisor list into Batch 1 outreach emails.<br>建议从第一批导师邮件开始，把已完成的 profile 和导师名单转化为实际联系动作。</p>
+            </div>
+          </div>
+          <div class="action-list">
+            <div class="action">
+              <div>
+                <h3>Draft Batch 1 emails / 写第一批导师邮件</h3>
+                <p>Draft tailored emails for Derrick Ong, Cheok Chit Fang, and Deng Lih Wen, with a PI-specific research-fit paragraph for each.<br>Derrick Ong、Cheok Chit Fang、Deng Lih Wen。每封邮件单独定制研究匹配段。</p>
+              </div>
+            </div>
+            <div class="action">
+              <div>
+                <h3>Prepare proof for PTPN11 paper / 准备论文证明</h3>
+                <p>Prepare the conference paper title, CPCI proof, proceedings page, author order, DOI, or indexing page.<br>整理 conference paper title、CPCI proof、proceedings page、作者顺序、DOI 或检索页面。</p>
+              </div>
+            </div>
+            <div class="action">
+              <div>
+                <h3>Build PI-specific narratives / 拆分导师叙事</h3>
+                <p>Develop four narrative versions: glioma mechanisms, DNA damage/metabolism, protein/genome instability, and CRISPR/genomics.<br>胶质瘤机制、DNA damage/metabolism、protein/genome instability、CRISPR/genomics 四条版本。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer>
+        Generated from local project materials in `/Users/mac/Desktop/Research Application for PhD`. Last reviewed for this page: 2026-06-06.<br>
+        本页由本地项目材料生成。页面最后复核日期：2026-06-06。
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    const supervisors = [
+      {
+        rank: 1,
+        name: "Dr Derrick Ong Sek Tong",
+        unit: "NUS Physiology / N2CR",
+        fit: "Very High",
+        fitClass: "high",
+        batch: "first",
+        direction: "Glioblastoma, glioma stem cells, transcription/epigenetics, CRISPR/Cas9 · 胶质母细胞瘤、胶质瘤干细胞、CRISPR/Cas9",
+        reason: "Direct match with PTPN11 glioma and Sanger CRISPR analysis. / 与 PTPN11 胶质瘤经历和 Sanger CRISPR 分析直接匹配。",
+        angle: "Lead with glioma cell models, siRNA, Western, Transwell and CRISPR-based approaches. / 可从胶质瘤细胞模型、siRNA、Western、Transwell 和 CRISPR-based approaches 切入。",
+        url: "https://medicine.nus.edu.sg/phys/about-us/academic-staff/tenure-track/ong-sek-tong-derrick/"
+      },
+      {
+        rank: 2,
+        name: "Dr Cheok Chit Fang",
+        unit: "NUS Pathology / N2CR",
+        fit: "Very High",
+        fitClass: "high",
+        batch: "first",
+        direction: "DNA damage response, cancer metabolism, molecular vulnerabilities, drug resistance · DNA 损伤应答、癌症代谢、耐药癌症",
+        reason: "Strong cancer mechanism and functional validation fit. / 癌症机制和功能验证匹配度很高。",
+        angle: "Lead with PTPN11 signaling, functional assays, and therapy-resistant cancer interest. / 可强调 PTPN11 信号通路、功能实验，以及对耐药癌症的兴趣。",
+        url: "https://medicine.nus.edu.sg/patho/team-member/cheok-chit-fang/"
+      },
+      {
+        rank: 3,
+        name: "A/Prof Deng Lih Wen",
+        unit: "NUS Biochemistry / N2CR",
+        fit: "Very High",
+        fitClass: "high",
+        batch: "first",
+        direction: "Cancer development, therapy resistance, cancer metabolism, tumour microenvironment · 癌症发生发展、耐药、代谢、肿瘤微环境",
+        reason: "Broad cancer mechanism fit with glioma signaling and ELISA/protein platform experience. / 广义癌症机制方向匹配，可连接胶质瘤信号通路和 ELISA/蛋白平台经验。",
+        angle: "Frame PTPN11 as pathway-level mechanistic training connected to resistance and metabolism. / 可将 PTPN11 项目包装为与耐药和代谢相关的通路层面机制训练。",
+        url: "https://medicine.nus.edu.sg/bch/faculty/deng-lih-wen/"
+      },
+      {
+        rank: 4,
+        name: "A/Prof Anand Jeyasekharan",
+        unit: "NUS CSI / N2CR",
+        fit: "High",
+        fitClass: "high",
+        batch: "second",
+        direction: "DNA damage, immune activation, chemotherapy-immunotherapy response · DNA 损伤、免疫激活、治疗响应",
+        reason: "Good bridge between cancer cell-intrinsic signaling and immune response. / 能桥接癌细胞内在信号和免疫应答。",
+        angle: "Present immunology as next-stage training built on wet-lab cancer signaling skills. / 可将免疫学呈现为建立在癌症信号湿实验能力上的下一阶段训练方向。",
+        url: "https://csi.nus.edu.sg/researcher/anand-jeyasekharan/"
+      },
+      {
+        rank: 5,
+        name: "A/Prof Dennis Kappei",
+        unit: "NUS CSI / Biochemistry",
+        fit: "High",
+        fitClass: "high",
+        batch: "second",
+        direction: "Telomere-driven genome instability, quantitative proteomics, protein/chromatin mechanisms · 端粒、基因组不稳定性、蛋白/染色质机制",
+        reason: "Best match for protein interaction, purification, AP, Western and molecular mechanism training. / 最适合连接蛋白互作、蛋白纯化、AP、Western 和分子机制训练。",
+        angle: "Lead with CUHK N protein-SRPK2 interaction, GST purification, AP and point-mutant scanning. / 可重点呈现 CUHK N protein-SRPK2 互作、GST 纯化、AP 和点突变扫描经历。",
+        url: "https://csi.nus.edu.sg/researcher/dennis-kappei/"
+      },
+      {
+        rank: 6,
+        name: "A/Prof Polly Leilei Chen",
+        unit: "NUS CSI / Anatomy",
+        fit: "Medium-High",
+        fitClass: "",
+        batch: "second",
+        direction: "RNA alterations, RNA editing/splicing, cancer initiation, immune evasion · RNA 改变、癌症起始、免疫逃逸",
+        reason: "Cancer mechanism is highly relevant; RNA/omics narrative needs strengthening. / 癌症机制相关性强，但 RNA/组学叙事需要进一步强化。",
+        angle: "Position RNA regulation and omics as next-stage development areas. / 可将 RNA regulation 和 omics 定位为下一阶段拟拓展方向。",
+        url: "https://csi.nus.edu.sg/researcher/polly-leilei-chen/"
+      },
+      {
+        rank: 7,
+        name: "Dr Jason Pitt",
+        unit: "NUS CSI",
+        fit: "Medium-High",
+        fitClass: "",
+        batch: "third",
+        direction: "Cancer genomics, genome instability, AI/data-intensive genomics · 癌症基因组学、基因组不稳定性",
+        reason: "Sanger CRISPR off-target analysis is a real bridge; computational depth needs strengthening. / Sanger CRISPR 脱靶分析是有效桥接点，但计算深度仍需加强。",
+        angle: "Lead with Cas-OFFinder, CRISPOR, Linux, gRNA ranking and stronger genomics training interest. / 可强调 Cas-OFFinder、CRISPOR、Linux、gRNA 排序，以及加强 genomics 训练的意愿。",
+        url: "https://csi.nus.edu.sg/researcher/jason-pitt/"
+      },
+      {
+        rank: 8,
+        name: "A/Prof Boon Cher Goh",
+        unit: "NUS CSI / Medical Oncology / N2CR",
+        fit: "Medium-High",
+        fitClass: "",
+        batch: "third",
+        direction: "Cancer pharmacology, functional genomics, biomarkers, precision oncology · 癌症药理、功能基因组学、生物标志物",
+        reason: "Good for translational cancer, functional genomics and biomarker discovery. / 适合转化癌症、功能基因组学和 biomarker discovery 方向。",
+        angle: "Lead with wet-lab validation, functional assays and biomarker-driven cancer therapy. / 可强调湿实验验证、功能实验和 biomarker-driven cancer therapy。",
+        url: "https://csi.nus.edu.sg/researcher/boon-cher-goh/"
+      },
+      {
+        rank: 9,
+        name: "A/Prof Lina H.K. Lim",
+        unit: "NUS Physiology / N2CR",
+        fit: "Medium",
+        fitClass: "medium",
+        batch: "third",
+        direction: "Tumour microenvironment, inflammation, innate immunity, STING-dependent anti-tumour response · 肿瘤微环境、炎症、天然免疫",
+        reason: "Useful immunology backup, less direct than glioma/CRISPR labs. / 是有价值的免疫学备选，但不如胶质瘤/CRISPR 导师直接。",
+        angle: "Use tumour microenvironment interest and ELISA/immunodetection as entry points. / 可用肿瘤微环境兴趣和 ELISA/免疫检测经验作为切入点。",
+        url: "https://medicine.nus.edu.sg/phys/about-us/academic-staff/tenure-track/lim-hsiu-kim-lina/"
+      },
+      {
+        rank: 10,
+        name: "A/Prof Celestial Yap",
+        unit: "NUS Physiology / N2CR",
+        fit: "Medium",
+        fitClass: "medium",
+        batch: "backup",
+        direction: "Ovarian cancer, cytoskeleton, tumour immune evasion, tumour microenvironment · 卵巢癌、细胞骨架、免疫逃逸",
+        reason: "Relevant to cancer and TME, but farther from glioma/PTPN11/CRISPR main line. / 与癌症和 TME 相关，但离胶质瘤/PTPN11/CRISPR 主线略远。",
+        angle: "Connect scratch/Transwell migration-invasion assays to cytoskeleton-mediated immune evasion. / 可将划痕/Transwell 迁移侵袭实验连接到 cytoskeleton-mediated immune evasion。",
+        url: "https://medicine.nus.edu.sg/phys/research/research-programs/cancer/yap-suen-mei-celestial-therese/"
+      },
+      {
+        rank: 11,
+        name: "Dr Anthony Khong",
+        unit: "NUS CSI / Physiology",
+        fit: "Medium",
+        fitClass: "medium",
+        batch: "backup",
+        direction: "Biomolecular condensates, stress granules, RNA/protein condensates in cancer · 生物分子凝聚体、癌细胞应激反应",
+        reason: "Novel cancer mechanism fit through protein/RNA biology and stress response. / 可通过蛋白/RNA 生物学和应激反应桥接新颖癌症机制方向。",
+        angle: "Lead with protein interaction and mechanistic biochemistry training. / 可从蛋白互作和机制生化训练切入。",
+        url: "https://csi.nus.edu.sg/researcher/anthony-khong/"
+      },
+      {
+        rank: 12,
+        name: "Prof Nicholas Gascoigne",
+        unit: "NUS Microbiology & Immunology",
+        fit: "Medium",
+        fitClass: "medium",
+        batch: "backup",
+        direction: "T-cell signaling, CAR-T signaling, cancer immunotherapy · T 细胞信号、CAR-T、癌症免疫治疗",
+        reason: "Good immunology/CAR-T backup, with limited direct T-cell/CAR-T experience. / 适合作为免疫学/CAR-T 备选，但直接 T-cell/CAR-T 经验有限。",
+        angle: "Frame as a pivot from molecular biology and cancer assays toward T-cell signaling. / 可包装为从分子生物学和癌症实验向 T-cell signaling 转向。",
+        url: "https://medicine.nus.edu.sg/mbio/about-us/our-people/academic-staff/nicholas-gascoigne.html"
+      },
+      {
+        rank: 13,
+        name: "Prof Dario Campana",
+        unit: "NUS Medicine / Paediatrics / CSI",
+        fit: "Medium-Low",
+        fitClass: "medium",
+        batch: "backup",
+        direction: "CAR-T, cellular immunotherapy, leukemia therapy · CAR-T、细胞免疫治疗、白血病治疗",
+        reason: "Strong CAR-T direction, but farthest from current glioma/CRISPR wet-lab profile. / CAR-T 方向很强，但与当前胶质瘤/CRISPR 湿实验 profile 距离最远。",
+        angle: "Use only as stretch target after preparing an immunotherapy-specific outreach version. / 建议作为冲刺目标，并在准备好免疫治疗专项联系版本后再使用。",
+        url: "https://medicine.nus.edu.sg/news/groundbreaking-work-on-car-t-immunotherapy-gets-national-honour/"
+      }
+    ];
+
+    const list = document.querySelector("#supervisorList");
+    const searchInput = document.querySelector("#searchInput");
+
+    function renderSupervisors() {
+      const query = searchInput.value.trim().toLowerCase();
+      const filtered = supervisors.filter((person) => {
+        const haystack = [person.name, person.unit, person.fit, person.direction, person.reason, person.angle].join(" ").toLowerCase();
+        return !query || haystack.includes(query);
+      });
+
+      list.innerHTML = filtered.map((person) => `
+        <article class="supervisor">
+          <div class="rank">${person.rank}</div>
+          <div>
+            <h3><a href="${person.url}" target="_blank" rel="noreferrer">${person.name}</a></h3>
+            <div class="unit">${person.unit}</div>
+            <p class="direction">${person.direction}</p>
+          </div>
+          <div class="fit-box">
+            <span class="fit ${person.fitClass}">${person.fit}</span>
+            <span>${person.reason}</span>
+            <span><strong>Angle / 切入点:</strong> ${person.angle}</span>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    searchInput.addEventListener("input", renderSupervisors);
+    renderSupervisors();
+
+    const navLinks = document.querySelectorAll("nav a");
+    const sections = Array.from(navLinks).map((link) => document.querySelector(link.getAttribute("href")));
+
+    window.addEventListener("scroll", () => {
+      const current = sections.findLast((section) => section && section.getBoundingClientRect().top <= 120);
+      if (!current) return;
+      navLinks.forEach((link) => link.classList.toggle("active", link.getAttribute("href") === `#${current.id}`));
+    }, { passive: true });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
