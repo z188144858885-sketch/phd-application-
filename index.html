@@ -689,9 +689,8 @@
         <a href="#overview" class="active">Overview / 概览 <span>01</span></a>
         <a href="#profile">Profile / 画像 <span>02</span></a>
         <a href="#supervisors">Supervisors / 导师 <span>03</span></a>
-        <a href="#documents">Documents / 文档 <span>04</span></a>
-        <a href="#events">Events / 宣讲会 <span>05</span></a>
-        <a href="#next">Next Steps / 下一步 <span>06</span></a>
+        <a href="#events">Events / 宣讲会 <span>04</span></a>
+        <a href="#next">Next Steps / 下一步 <span>05</span></a>
       </nav>
       <div class="side-note">
         This page consolidates the current local project files into a browsable application dashboard.<br>
@@ -839,36 +838,101 @@
           </div>
 
           <div class="supervisor-list" id="supervisorList"></div>
-        </section>
 
-        <section id="documents">
-          <div class="section-head">
-            <div>
-              <h2>Project Documents / 项目文档</h2>
-              <p>All project files are linked here for drafting emails, preparing SOP materials, or reviewing before sharing with a mentor.<br>当前项目所有文件入口，适合继续写邮件、做 SOP 或发给导师前复核。</p>
+          <div class="briefs-panel" aria-labelledby="batch1-briefs-title">
+            <div class="briefs-head">
+              <div>
+                <p class="eyebrow">Batch 1 research briefs</p>
+                <h3 id="batch1-briefs-title">First-contact research angles / 第一批导师研究切入点</h3>
+                <p>Recent papers, core directions, and talking points for cold emails and interviews.<br>整理最近 3-5 年论文、研究方向，以及可用于套辞信和面试的表达要点。</p>
+              </div>
+              <span class="brief-date">Updated / 更新: 2026-06-14</span>
             </div>
-          </div>
-          <div class="doc-grid">
-            <a class="doc" href="CV.pdf">
-              <strong>CV.pdf</strong>
-              <span>Original CV / 原始简历</span>
-            </a>
-            <a class="doc" href="Goal.md">
-              <strong>Goal.md</strong>
-              <span>NUS target, 2027 intake, research directions / NUS 目标、2027 入学、研究方向</span>
-            </a>
-            <a class="doc" href="memory.md">
-              <strong>memory.md</strong>
-              <span>Application profile / 申请画像</span>
-            </a>
-            <a class="doc" href="NUS_supervisor_merged_list.md">
-              <strong>Supervisor List.md</strong>
-              <span>Bilingual supervisor fit list / 中英双语导师匹配名单</span>
-            </a>
-            <a class="doc" href="NUS_supervisor_merged_list.docx">
-              <strong>Supervisor List.docx</strong>
-              <span>Word version for sharing / 便于发送的 Word 版本</span>
-            </a>
+
+            <div class="brief-grid">
+              <article class="brief-card">
+                <div class="brief-card-head">
+                  <h4>Dr Derrick Ong Sek Tong</h4>
+                  <span class="priority-pill">Priority 1 / 第一优先</span>
+                </div>
+                <div class="brief-section">
+                  <h5>Recent focus / 最近研究方向</h5>
+                  <p>Glioblastoma, glioma stem cells, neural stem-cell regulation, transcriptional and epigenetic mechanisms.<br>胶质母细胞瘤、胶质瘤干细胞、神经干细胞调控、转录与表观遗传机制。</p>
+                </div>
+                <div class="brief-section">
+                  <h5>Papers to mention / 推荐提到的论文</h5>
+                  <ol class="paper-list">
+                    <li><a href="https://doi.org/10.1038/s41419-024-06718-2" target="_blank" rel="noreferrer">METTL8 links mt-tRNA m3C modification to the HIF1α/RTK/Akt axis to sustain GBM stemness and tumorigenicity</a><span>METTL8 帮助 GBM stem cells 维持干性和成瘤能力。</span></li>
+                    <li><a href="https://doi.org/10.1038/s41418-023-01192-3" target="_blank" rel="noreferrer">CAMK2D serves as a molecular scaffold for RNF8-MAD2 complex to induce mitotic checkpoint in glioma</a><span>研究 glioma cells 如何通过 mitotic checkpoint 影响肿瘤细胞生长。</span></li>
+                    <li><a href="https://doi.org/10.1093/nar/gkae457" target="_blank" rel="noreferrer">PHF2 regulates genome topology and DNA replication in neural stem cells via cohesin</a><span>展示其对 chromatin structure、DNA replication 和 stem-cell regulation 的兴趣。</span></li>
+                  </ol>
+                </div>
+                <div class="brief-section">
+                  <h5>Cold email and interview angle / 套辞信与面试切入点</h5>
+                  <ul>
+                    <li>Lead with PTPN11 glioma, MAPK/ERK pathway, ERK phosphorylation, and glioma cell proliferation/migration/invasion assays.<br>先讲 PTPN11 胶质瘤、MAPK/ERK 通路、ERK 磷酸化和胶质瘤细胞增殖/迁移/侵袭实验。</li>
+                    <li>Frame the transition from glioma cell phenotype work to glioma stem-cell mechanisms.<br>把自己定位为从普通 glioma cell phenotype 进一步走向 glioma stem-cell mechanisms。</li>
+                    <li><strong>Memory line / 记忆句:</strong> I have worked on glioma signaling; his lab studies glioma stemness. My next step is to connect pathway validation with GSC mechanisms.<br>我做过 glioma signaling；他的实验室研究 glioma stemness。我的下一步是把通路验证连接到 GSC 机制。</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="brief-card">
+                <div class="brief-card-head">
+                  <h4>Dr Cheok Chit Fang</h4>
+                  <span class="priority-pill">Priority 2 / 第二优先</span>
+                </div>
+                <div class="brief-section">
+                  <h5>Recent focus / 最近研究方向</h5>
+                  <p>Molecular vulnerabilities in cancer, DNA damage response, p53, cancer metabolism, replication stress, and therapy response biomarkers.<br>癌症分子弱点、DNA 损伤应答、p53、癌症代谢、复制压力和治疗反应标志物。</p>
+                </div>
+                <div class="brief-section">
+                  <h5>Papers to mention / 推荐提到的论文</h5>
+                  <ol class="paper-list">
+                    <li><a href="https://doi.org/10.1093/nar/gkae811" target="_blank" rel="noreferrer">p53-dependent crosstalk between DNA replication integrity and redox metabolism mediated through a NRF2-PARP1 axis</a><span>研究 p53、DNA replication stress 和 redox metabolism 如何共同影响癌细胞稳定性。</span></li>
+                    <li><a href="https://doi.org/10.1038/s41388-026-03830-9" target="_blank" rel="noreferrer">Mes/Stem-A ovarian cancer subtypes predict sensitivity to ATR inhibition</a><span>用分子亚型预测哪些 ovarian cancer cells 对 ATR inhibition 更敏感。</span></li>
+                    <li><a href="https://doi.org/10.3390/ijms221910420" target="_blank" rel="noreferrer">Nitro-Deficient Niclosamide Confers Reduced Genotoxicity and Retains Mitochondrial Uncoupling Activity for Cancer Therapy</a><span>连接 cancer metabolism、mitochondrial function 和 p53-defective cancer vulnerabilities。</span></li>
+                  </ol>
+                </div>
+                <div class="brief-section">
+                  <h5>Cold email and interview angle / 套辞信与面试切入点</h5>
+                  <ul>
+                    <li>Present the PTPN11 project as training in linking molecular perturbation with cancer-cell phenotypes.<br>把 PTPN11 项目讲成“分子扰动如何影响癌细胞表型”的训练。</li>
+                    <li>Emphasize cancer signaling and functional validation rather than only glioma, because her lab is broader than glioma.<br>不要只强调胶质瘤，要强调 cancer signaling 和 functional validation。</li>
+                    <li>Use CRISPR-Cas9 off-target analysis as a bridge to gene perturbation and target discovery.<br>用 CRISPR-Cas9 脱靶分析桥接 gene perturbation 和靶点发现。</li>
+                    <li><strong>Memory line / 记忆句:</strong> Her lab identifies cancer vulnerabilities; I bring molecular perturbation, pathway validation, and phenotype assays.<br>她的实验室寻找癌细胞弱点；我具备分子扰动、通路验证和细胞表型实验训练。</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="brief-card">
+                <div class="brief-card-head">
+                  <h4>A/Prof Deng Lih Wen</h4>
+                  <span class="priority-pill">Priority 3 / 第三优先</span>
+                </div>
+                <div class="brief-section">
+                  <h5>Recent focus / 最近研究方向</h5>
+                  <p>Cancer development, therapy resistance, cancer metabolism, oxidative stress, chromatin dynamics, and tumour microenvironment.<br>癌症发生发展、治疗耐药、癌症代谢、氧化应激、染色质变化和肿瘤微环境。</p>
+                </div>
+                <div class="brief-section">
+                  <h5>Papers to mention / 推荐提到的论文</h5>
+                  <ol class="paper-list">
+                    <li><a href="https://doi.org/10.1016/j.celrep.2021.109621" target="_blank" rel="noreferrer">GAGE mediates radio resistance in cervical cancers via the regulation of chromatin accessibility</a><span>解释癌细胞为什么可能对放疗不敏感，以及 chromatin accessibility 如何影响 DNA repair。</span></li>
+                    <li><a href="https://doi.org/10.3390/cells12060926" target="_blank" rel="noreferrer">Biology of Cancer-Testis Antigens and Their Therapeutic Implications in Cancer</a><span>综述 cancer-testis antigens，与 tumor-specific targets 和 cancer immunotherapy 相关。</span></li>
+                    <li><a href="https://doi.org/10.1186/s12967-024-05278-5" target="_blank" rel="noreferrer">Enhanced anti-tumor efficacy with multi-transgene armed mesenchymal stem cells for treating peritoneal carcinomatosis</a><span>涉及 gene-based / cell-based anti-tumor strategy，可连接基因编辑兴趣。</span></li>
+                  </ol>
+                </div>
+                <div class="brief-section">
+                  <h5>Cold email and interview angle / 套辞信与面试切入点</h5>
+                  <ul>
+                    <li>Position the PTPN11-MAPK/ERK project as pathway-level cancer mechanism training relevant to therapy resistance.<br>把 PTPN11-MAPK/ERK 项目定位为与治疗耐药相关的癌症通路机制训练。</li>
+                    <li>State a focused interest in cancer signaling, metabolic adaptation, and therapy resistance.<br>明确说自己关注 cancer signaling、metabolic adaptation 和 therapy resistance。</li>
+                    <li>Use Western Blot, ELISA, protein purification, and immunodetection as evidence of mechanistic validation ability.<br>用 Western Blot、ELISA、蛋白纯化和免疫检测证明自己能做机制验证。</li>
+                    <li><strong>Memory line / 记忆句:</strong> His lab studies why cancers become resistant; I can contribute through pathway analysis, protein detection, and cell-based assays.<br>他的实验室研究癌症为什么耐药；我可以从通路分析、蛋白检测和细胞实验角度参与机制验证。</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
           </div>
         </section>
 
