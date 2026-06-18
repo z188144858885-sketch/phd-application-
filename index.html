@@ -416,6 +416,40 @@
       gap: 12px;
     }
 
+
+
+    .school-group {
+      display: grid;
+      gap: 12px;
+    }
+
+    .school-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 2px 2px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .school-heading h3 {
+      margin: 0;
+      font-size: 15px;
+      color: #153f39;
+    }
+
+    .school-heading span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .rank span {
+      display: block;
+      font-size: 10px;
+      line-height: 1;
+      opacity: .82;
+    }
+
     .supervisor {
       display: grid;
       grid-template-columns: 64px minmax(0, 1fr) minmax(220px, .35fr);
@@ -702,7 +736,7 @@
       <header class="hero" id="overview">
         <div>
           <p class="eyebrow">Research application dashboard / 科研申请工作台</p>
-          <h2>NUS PhD application materials, supervisor fit, and outreach priorities.<br>NUS 博士申请材料、导师匹配与联系优先级。</h2>
+          <h2>NUS-first PhD application materials, expanded NTU backup matches, and outreach priorities.<br>以 NUS 为主、加入 NTU 备选的博士申请材料、导师匹配与联系优先级。</h2>
           <p class="hero-copy">
             This workspace centers on the NUS PhD application for the August 2027 intake. It uses the PTPN11 glioma/MAPK-ERK mechanism project as the core story, supported by CRISPR-Cas9 off-target analysis, protein interaction work, and immunodetection platforms.
             <br><br>
@@ -710,16 +744,16 @@
             结合 CRISPR-Cas9 脱靶分析、蛋白互作与免疫检测平台，形成一套可用于导师联系和材料写作的申请资产。
           </p>
           <div class="meta-grid">
-            <div class="meta"><strong>NUS</strong><span>Target school / 目标学校</span></div>
+            <div class="meta"><strong>NUS + NTU</strong><span>Target and backup schools / 主申与新增备选学校</span></div>
             <div class="meta"><strong>Aug 2027</strong><span>Intake goal / 入学时间</span></div>
-            <div class="meta"><strong>13</strong><span>Matched supervisors / 匹配导师</span></div>
+            <div class="meta"><strong>31</strong><span>Matched supervisors / 匹配导师</span></div>
             <div class="meta"><strong>5 files</strong><span>Project assets / 项目文件</span></div>
           </div>
         </div>
         <div class="map-card" aria-label="Research positioning map">
           <div class="map-head">
             <h3>Research Fit Map / 研究匹配图</h3>
-            <p>Three application storylines and how they connect to NUS supervisor fit.<br>申请叙事的三条主线与 NUS 导师匹配方式。</p>
+            <p>Three application storylines and how they connect to NUS and NTU supervisor fit.<br>申请叙事的三条主线与 NUS/NTU 导师匹配方式。</p>
           </div>
           <svg class="research-map" viewBox="0 0 560 360" role="img" aria-label="Cancer mechanisms connected with CRISPR and protein platform">
             <defs>
@@ -826,7 +860,7 @@
           <div class="section-head">
             <div>
               <h2>Supervisor Priority List / 导师优先级</h2>
-              <p>The bilingual third-person supervisor list is converted here into a searchable browsing view.<br>中英双语第三方口吻名单在这里转成可筛选浏览版。</p>
+              <p>The bilingual third-person supervisor list is grouped by school and converted into a searchable browsing view.<br>中英双语第三方口吻名单按学校分组，并转成可搜索浏览版。</p>
             </div>
           </div>
 
@@ -991,14 +1025,14 @@
           <div class="section-head">
             <div>
               <h2>Next Steps / 下一步</h2>
-              <p>The recommended next move is to turn the completed profile and supervisor list into Batch 1 outreach emails.<br>建议从第一批导师邮件开始，把已完成的 profile 和导师名单转化为实际联系动作。</p>
+              <p>The recommended next move is to send NUS Batch 1 emails while preparing the first NTU backup batch.<br>建议先推进 NUS 第一批导师邮件，同时准备 NTU 第一批备选联系邮件。</p>
             </div>
           </div>
           <div class="action-list">
             <div class="action">
               <div>
                 <h3>Draft Batch 1 emails / 写第一批导师邮件</h3>
-                <p>Draft tailored emails for Derrick Ong, Cheok Chit Fang, and Deng Lih Wen, with a PI-specific research-fit paragraph for each.<br>Derrick Ong、Cheok Chit Fang、Deng Lih Wen。每封邮件单独定制研究匹配段。</p>
+                <p>Draft tailored emails for Derrick Ong, Cheok Chit Fang, and Deng Lih Wen, with a PI-specific research-fit paragraph for each.<br>Derrick Ong、Cheok Chit Fang、Deng Lih Wen。每封邮件单独定制研究匹配段，并在发送前再次确认 2027 PhD 空间。</p>
               </div>
             </div>
             <div class="action">
@@ -1009,8 +1043,8 @@
             </div>
             <div class="action">
               <div>
-                <h3>Build PI-specific narratives / 拆分导师叙事</h3>
-                <p>Develop four narrative versions: glioma mechanisms, DNA damage/metabolism, protein/genome instability, and CRISPR/genomics.<br>胶质瘤机制、DNA damage/metabolism、protein/genome instability、CRISPR/genomics 四条版本。</p>
+                <h3>Prepare NTU priority batch / 准备 NTU 第一批备选</h3>
+                <p>Prepare backup outreach angles for Li Ren Kong, Jie Xiong, Chuchu Wang, Hwei Ee Tan, and Joseph Sung.<br>为 Li Ren Kong、Jie Xiong、Chuchu Wang、Hwei Ee Tan 和 Joseph Sung 准备备选联系切入点。</p>
               </div>
             </div>
           </div>
@@ -1018,8 +1052,8 @@
       </div>
 
       <footer>
-        Generated from local project materials in `/Users/mac/Desktop/Research Application for PhD`. Last reviewed for this page: 2026-06-06.<br>
-        本页由本地项目材料生成。页面最后复核日期：2026-06-06。
+        Generated from local project materials in `/Users/mac/Desktop/Research Application for PhD`. Last reviewed for this page: 2026-06-18.<br>
+        本页由本地项目材料生成。页面最后复核日期：2026-06-18。
       </footer>
     </main>
   </div>
@@ -1027,6 +1061,7 @@
   <script>
     const supervisors = [
       {
+        school: "NUS",
         rank: 1,
         name: "Dr Derrick Ong Sek Tong",
         unit: "NUS Physiology / N2CR",
@@ -1039,6 +1074,7 @@
         url: "https://medicine.nus.edu.sg/phys/about-us/academic-staff/tenure-track/ong-sek-tong-derrick/"
       },
       {
+        school: "NUS",
         rank: 2,
         name: "Dr Cheok Chit Fang",
         unit: "NUS Pathology / N2CR",
@@ -1051,6 +1087,7 @@
         url: "https://medicine.nus.edu.sg/patho/team-member/cheok-chit-fang/"
       },
       {
+        school: "NUS",
         rank: 3,
         name: "A/Prof Deng Lih Wen",
         unit: "NUS Biochemistry / N2CR",
@@ -1063,6 +1100,7 @@
         url: "https://medicine.nus.edu.sg/bch/faculty/deng-lih-wen/"
       },
       {
+        school: "NUS",
         rank: 4,
         name: "A/Prof Anand Jeyasekharan",
         unit: "NUS CSI / N2CR",
@@ -1075,6 +1113,7 @@
         url: "https://csi.nus.edu.sg/researcher/anand-jeyasekharan/"
       },
       {
+        school: "NUS",
         rank: 5,
         name: "A/Prof Dennis Kappei",
         unit: "NUS CSI / Biochemistry",
@@ -1087,6 +1126,7 @@
         url: "https://csi.nus.edu.sg/researcher/dennis-kappei/"
       },
       {
+        school: "NUS",
         rank: 6,
         name: "A/Prof Polly Leilei Chen",
         unit: "NUS CSI / Anatomy",
@@ -1099,6 +1139,7 @@
         url: "https://csi.nus.edu.sg/researcher/polly-leilei-chen/"
       },
       {
+        school: "NUS",
         rank: 7,
         name: "Dr Jason Pitt",
         unit: "NUS CSI",
@@ -1111,6 +1152,7 @@
         url: "https://csi.nus.edu.sg/researcher/jason-pitt/"
       },
       {
+        school: "NUS",
         rank: 8,
         name: "A/Prof Boon Cher Goh",
         unit: "NUS CSI / Medical Oncology / N2CR",
@@ -1123,6 +1165,7 @@
         url: "https://csi.nus.edu.sg/researcher/boon-cher-goh/"
       },
       {
+        school: "NUS",
         rank: 9,
         name: "A/Prof Lina H.K. Lim",
         unit: "NUS Physiology / N2CR",
@@ -1135,6 +1178,7 @@
         url: "https://medicine.nus.edu.sg/phys/about-us/academic-staff/tenure-track/lim-hsiu-kim-lina/"
       },
       {
+        school: "NUS",
         rank: 10,
         name: "A/Prof Celestial Yap",
         unit: "NUS Physiology / N2CR",
@@ -1147,6 +1191,7 @@
         url: "https://medicine.nus.edu.sg/phys/research/research-programs/cancer/yap-suen-mei-celestial-therese/"
       },
       {
+        school: "NUS",
         rank: 11,
         name: "Dr Anthony Khong",
         unit: "NUS CSI / Physiology",
@@ -1159,6 +1204,7 @@
         url: "https://csi.nus.edu.sg/researcher/anthony-khong/"
       },
       {
+        school: "NUS",
         rank: 12,
         name: "Prof Nicholas Gascoigne",
         unit: "NUS Microbiology & Immunology",
@@ -1171,6 +1217,7 @@
         url: "https://medicine.nus.edu.sg/mbio/about-us/our-people/academic-staff/nicholas-gascoigne.html"
       },
       {
+        school: "NUS",
         rank: 13,
         name: "Prof Dario Campana",
         unit: "NUS Medicine / Paediatrics / CSI",
@@ -1181,34 +1228,289 @@
         reason: "Strong CAR-T direction, but farthest from current glioma/CRISPR wet-lab profile. / CAR-T 方向很强，但与当前胶质瘤/CRISPR 湿实验 profile 距离最远。",
         angle: "Use only as stretch target after preparing an immunotherapy-specific outreach version. / 建议作为冲刺目标，并在准备好免疫治疗专项联系版本后再使用。",
         url: "https://medicine.nus.edu.sg/news/groundbreaking-work-on-car-t-immunotherapy-gets-national-honour/"
+      },
+      {
+        school: "NUS",
+        rank: 14,
+        name: "Prof Ashok Venkitaraman",
+        unit: "NUS Cancer Science Institute / Medicine",
+        fit: "High",
+        fitClass: "high",
+        batch: "supplement",
+        direction: "DNA repair, genome stability, BRCA-related cancer biology, therapeutic vulnerabilities · DNA 修复、基因组稳定性、BRCA 相关癌症机制",
+        reason: "Strong cancer-mechanism fit through DNA repair and genome stability; useful bridge from PTPN11 pathway validation to molecular vulnerability research. / 可从 DNA 修复和基因组稳定性连接癌症机制研究，也能承接申请人的通路验证训练。",
+        angle: "Lead with cancer signaling, Western-based pathway validation, and interest in DNA repair-linked cancer vulnerabilities. / 可强调癌症信号通路、Western 验证，以及对 DNA repair-linked cancer vulnerabilities 的兴趣。",
+        url: "https://www.csi.nus.edu.sg/web/ashok-venkitaraman/"
+      },
+      {
+        school: "NUS",
+        rank: 15,
+        name: "Prof Yoshiaki Ito",
+        unit: "NUS Cancer Science Institute / Biochemistry",
+        fit: "High",
+        fitClass: "high",
+        batch: "supplement",
+        direction: "RUNX transcription factors, leukemia, gastric cancer, cancer stem-cell mechanisms · RUNX 转录因子、白血病、胃癌、癌症干细胞机制",
+        reason: "Good cancer stem-cell and transcriptional mechanism match; extends the glioma stem-cell narrative beyond the first-contact list. / 与癌症干细胞和转录调控机制相关，可扩展申请人的 glioma stem-cell 叙事。",
+        angle: "Connect PTPN11 glioma signaling and cell phenotype assays to transcription-factor-driven cancer cell-state control. / 可把 PTPN11 胶质瘤信号和细胞表型实验连接到转录因子调控的癌细胞状态。",
+        url: "https://csi.nus.edu.sg/researcher/yoshiaki-ito/"
+      },
+      {
+        school: "NUS",
+        rank: 16,
+        name: "Prof Chng Wee Joo",
+        unit: "NUS Medicine / Haematology / CSI",
+        fit: "Medium-High",
+        fitClass: "",
+        batch: "supplement",
+        direction: "Multiple myeloma, cancer genomics, drug resistance, haematological malignancies · 多发性骨髓瘤、癌症基因组学、耐药、血液肿瘤",
+        reason: "Useful for haematological cancer and genomics-oriented cancer biology; less direct than glioma but strong for cancer mechanisms and therapy resistance. / 适合血液肿瘤与癌症基因组学方向，虽不直接是胶质瘤，但能连接癌症机制和耐药。",
+        angle: "Lead with cancer-cell functional validation and CRISPR/off-target analysis as preparation for functional genomics. / 可用癌细胞功能验证和 CRISPR 脱靶分析连接 functional genomics。",
+        url: "https://medicine.nus.edu.sg/med/hema/chng-wee-joo/"
+      },
+      {
+        school: "NUS",
+        rank: 17,
+        name: "Prof Paul MacAry",
+        unit: "NUS Microbiology & Immunology",
+        fit: "Medium-High",
+        fitClass: "",
+        batch: "supplement",
+        direction: "Antibody engineering, translational immunology, immune therapeutics · 抗体工程、转化免疫学、免疫治疗",
+        reason: "Strong immunology-side addition for antibody and therapeutic immunology; needs the applicant to frame immunology as next-stage training. / 是免疫治疗和抗体方向的强补充，但需要将免疫学定位为下一阶段训练方向。",
+        angle: "Use ELISA/immunodetection, recombinant protein experience, and interest in cancer immunotherapy as the bridge. / 用 ELISA/免疫检测、重组蛋白经验和 cancer immunotherapy 兴趣作为切入点。",
+        url: "https://medicine.nus.edu.sg/mbio/about-us/our-people/academic-staff/paul-macary.html"
+      },
+      {
+        school: "NUS",
+        rank: 18,
+        name: "A/Prof Veronique Angeli",
+        unit: "NUS Microbiology & Immunology",
+        fit: "Medium",
+        fitClass: "medium",
+        batch: "supplement",
+        direction: "Tissue immunology, inflammation, lymphatic-endothelial immune regulation · 组织免疫、炎症、淋巴/内皮免疫调控",
+        reason: "Good immunology backup with tissue microenvironment relevance; cancer fit is indirect but useful for TME-oriented positioning. / 适合作为组织免疫和微环境方向备选，癌症相关性较间接但可服务 TME 叙事。",
+        angle: "Frame as a move from cancer-cell signaling toward tissue inflammation and tumour microenvironment mechanisms. / 可包装为从癌细胞信号拓展到组织炎症和肿瘤微环境机制。",
+        url: "https://medicine.nus.edu.sg/mbio/about-us/our-people/academic-staff/veronique-angeli.html"
+      },
+      {
+        school: "NUS",
+        rank: 19,
+        name: "Prof Lim Chwee Teck",
+        unit: "NUS Biomedical Engineering / iHealthtech",
+        fit: "Medium",
+        fitClass: "medium",
+        batch: "supplement",
+        direction: "Mechanobiology, circulating tumour cells, microfluidics, liquid biopsy technologies · 机械生物学、循环肿瘤细胞、微流控、液体活检技术",
+        reason: "Technology-heavy cancer translation fit; connects to cancer phenotypes and biomarker detection rather than core molecular immunology. / 偏癌症转化技术，可连接细胞表型和 biomarker 检测，但不是核心分子免疫方向。",
+        angle: "Lead with glioma cell phenotype assays and ELISA/biomarker experience, then show interest in translational cancer technologies. / 可从胶质瘤表型实验和 ELISA/biomarker 经验切入，再连接癌症转化技术。",
+        url: "https://cde.nus.edu.sg/bme/staff/lim-chwee-teck/"
+      },
+      {
+        school: "NTU",
+        rank: 1,
+        name: "Asst Prof Li Ren Kong",
+        unit: "NTU LKCMedicine",
+        fit: "High",
+        fitClass: "high",
+        batch: "ntu-priority",
+        direction: "Cancer and stem cell biology, tumour models, cell-state mechanisms · 癌症与干细胞生物学、肿瘤模型、细胞状态机制",
+        reason: "Strong NTU match because the applicant can connect glioma cell phenotypes and pathway validation to cancer stem-cell biology. / 与申请人的胶质瘤细胞表型和通路验证经历能自然连接到 cancer stem-cell biology。",
+        angle: "Lead with PTPN11 glioma, U87MG/U251MG functional assays, and interest in cancer stem-cell state regulation. / 可强调 PTPN11 胶质瘤、U87MG/U251MG 功能实验和癌症干细胞状态调控兴趣。",
+        url: "https://www.ntu.edu.sg/medicine/our-people/faculty"
+      },
+      {
+        school: "NTU",
+        rank: 2,
+        name: "Asst Prof Jie Xiong",
+        unit: "NTU LKCMedicine",
+        fit: "High",
+        fitClass: "high",
+        batch: "ntu-priority",
+        direction: "Experimental medicine and cancer biology, tumour mechanisms, translational disease models · 实验医学与癌症生物学、肿瘤机制、转化疾病模型",
+        reason: "Good cancer-biology match for mechanistic wet-lab training and functional validation. / 适合癌症机制湿实验和功能验证方向。",
+        angle: "Position the applicant as trained in cancer pathway validation and ready to extend into translational tumour models. / 可把申请人定位为已具备癌症通路验证训练，并希望进入转化肿瘤模型研究。",
+        url: "https://www.ntu.edu.sg/medicine/our-people/faculty"
+      },
+      {
+        school: "NTU",
+        rank: 3,
+        name: "Asst Prof Chuchu Wang",
+        unit: "NTU LKCMedicine",
+        fit: "Medium-High",
+        fitClass: "",
+        batch: "ntu-priority",
+        direction: "Systems immunology and cell biology, immune-cell regulation, disease mechanisms · 系统免疫学与细胞生物学、免疫细胞调控、疾病机制",
+        reason: "Useful immunology bridge; strongest if the applicant frames immunology as a planned training direction. / 是有价值的免疫学桥接，适合将免疫学作为下一阶段训练方向。",
+        angle: "Use ELISA/immunodetection and molecular biology experience as evidence for entering systems immunology. / 用 ELISA/免疫检测和分子生物学经验作为进入 systems immunology 的基础。",
+        url: "https://www.ntu.edu.sg/medicine/our-people/faculty"
+      },
+      {
+        school: "NTU",
+        rank: 4,
+        name: "Asst Prof Hwei Ee Tan",
+        unit: "NTU LKCMedicine",
+        fit: "Medium-High",
+        fitClass: "",
+        batch: "ntu-priority",
+        direction: "Cell and stem cell biology, cell-state regulation, disease modelling · 细胞与干细胞生物学、细胞状态调控、疾病模型",
+        reason: "Connects to glioma cell-line handling and phenotype assays, though cancer specificity needs confirmation by email. / 可连接胶质瘤细胞系和表型实验，但癌症具体项目需要邮件确认。",
+        angle: "Lead with cell culture, siRNA perturbation, and migration/invasion assays as cell-biology preparation. / 可强调细胞培养、siRNA 扰动和迁移/侵袭实验。",
+        url: "https://www.ntu.edu.sg/medicine/our-people/faculty"
+      },
+      {
+        school: "NTU",
+        rank: 5,
+        name: "Prof Joseph Sung",
+        unit: "NTU LKCMedicine",
+        fit: "Medium-High",
+        fitClass: "",
+        batch: "ntu-priority",
+        direction: "Gastrointestinal disease, colorectal cancer prevention, translational clinical research · 胃肠疾病、结直肠癌预防、转化临床研究",
+        reason: "Relevant for cancer prevention and translational oncology; fit is more clinical than the applicant’s current mechanistic profile. / 适合癌症预防和转化肿瘤方向，但比申请人当前机制 profile 更偏临床。",
+        angle: "Use cancer-cell mechanism training and biomarker/ELISA experience to support translational cancer interests. / 用癌细胞机制训练和 biomarker/ELISA 经验支撑转化癌症兴趣。",
+        url: "https://www.ntu.edu.sg/medicine/our-people/faculty"
+      },
+      {
+        school: "NTU",
+        rank: 6,
+        name: "Assoc Prof Su I-Hsin",
+        unit: "NTU LKCMedicine",
+        fit: "Medium-High",
+        fitClass: "",
+        batch: "ntu-second",
+        direction: "Epigenetics, immune regulation, inflammation, disease mechanisms · 表观遗传、免疫调控、炎症、疾病机制",
+        reason: "Good immune-regulation and epigenetics bridge; cancer fit depends on available lab projects. / 适合免疫调控和表观遗传桥接，癌症匹配取决于具体项目。",
+        angle: "Connect PTPN11 signaling and protein/immunodetection skills to immune-cell regulatory mechanisms. / 可把 PTPN11 信号和蛋白/免疫检测技能连接到免疫细胞调控机制。",
+        url: "https://www.ntu.edu.sg/medicine/our-people/faculty"
+      },
+      {
+        school: "NTU",
+        rank: 7,
+        name: "Asst Prof Christine Cheung",
+        unit: "NTU LKCMedicine",
+        fit: "Medium",
+        fitClass: "medium",
+        batch: "ntu-second",
+        direction: "Vascular biology, endothelial biology, tissue microenvironment · 血管生物学、内皮生物学、组织微环境",
+        reason: "Indirect but useful for tumour microenvironment and vascular niche directions. / 与肿瘤微环境和血管生态位方向可间接连接。",
+        angle: "Use migration/invasion assays and TME interest as the bridge, not as a pure oncology claim. / 用迁移/侵袭实验和 TME 兴趣切入，不把它写成纯肿瘤实验室。",
+        url: "https://www.ntu.edu.sg/medicine/our-people/faculty"
+      },
+      {
+        school: "NTU",
+        rank: 8,
+        name: "Assoc Prof Andrew Tan Nguan Soon",
+        unit: "NTU LKCMedicine",
+        fit: "Medium",
+        fitClass: "medium",
+        batch: "ntu-second",
+        direction: "Infection, immunity, host response, translational immunology · 感染、免疫、宿主反应、转化免疫学",
+        reason: "Immunology-oriented backup; useful if the application narrative expands beyond cancer into host immune regulation. / 免疫学备选，适合把申请叙事从癌症扩展到宿主免疫调控。",
+        angle: "Lead with immunodetection, protein techniques, and desire to strengthen immune-mechanism training. / 可强调免疫检测、蛋白技术和加强免疫机制训练的目标。",
+        url: "https://www.ntu.edu.sg/medicine/our-people/faculty"
+      },
+      {
+        school: "NTU",
+        rank: 9,
+        name: "Asst Prof Kimberly Kline",
+        unit: "NTU School of Biological Sciences",
+        fit: "Medium",
+        fitClass: "medium",
+        batch: "ntu-second",
+        direction: "Host-pathogen interactions, bacterial infection, immune response · 宿主-病原互作、细菌感染、免疫反应",
+        reason: "Not cancer-focused, but relevant to molecular microbiology and immune-response training from the CUHK protein-interaction side. / 不是癌症方向，但可连接 CUHK 蛋白互作和免疫反应训练。",
+        angle: "Use CUHK N protein-SRPK2 interaction, protein purification, and host-pathogen mechanism interest. / 可用 CUHK N protein-SRPK2 互作、蛋白纯化和宿主-病原机制兴趣切入。",
+        url: "https://www.ntu.edu.sg/sbs"
+      },
+      {
+        school: "NTU",
+        rank: 10,
+        name: "Assoc Prof Koh Cheng Gee",
+        unit: "NTU School of Biological Sciences",
+        fit: "Medium",
+        fitClass: "medium",
+        batch: "ntu-second",
+        direction: "Molecular biology, RNA/protein regulation, cancer-relevant cell mechanisms · 分子生物学、RNA/蛋白调控、癌症相关细胞机制",
+        reason: "Possible molecular-mechanism backup through RNA/protein regulation; needs project-specific confirmation. / 可作为 RNA/蛋白调控机制备选，但需要确认具体癌症项目。",
+        angle: "Lead with molecular cloning, protein interaction, Western Blot, and mechanism-validation training. / 可强调分子克隆、蛋白互作、Western Blot 和机制验证训练。",
+        url: "https://www.ntu.edu.sg/sbs"
+      },
+      {
+        school: "NTU",
+        rank: 11,
+        name: "Asst Prof Luo Dahai",
+        unit: "NTU School of Biological Sciences",
+        fit: "Medium-Low",
+        fitClass: "medium",
+        batch: "ntu-backup",
+        direction: "Innate immunity, RNA virus-host interactions, molecular infection biology · 天然免疫、RNA 病毒-宿主互作、感染分子机制",
+        reason: "More infection/immunity than cancer, but can use the CUHK viral protein-interaction project as a bridge. / 更偏感染与免疫，但能用 CUHK 病毒蛋白互作项目桥接。",
+        angle: "Use SARS-CoV-2 N protein-SRPK2 work and immunodetection/protein platform experience. / 可用 SARS-CoV-2 N protein-SRPK2 项目和免疫检测/蛋白平台经验切入。",
+        url: "https://www.ntu.edu.sg/sbs"
+      },
+      {
+        school: "NTU",
+        rank: 12,
+        name: "Prof Lars Nordenskiold",
+        unit: "NTU School of Biological Sciences",
+        fit: "Medium-Low",
+        fitClass: "medium",
+        batch: "ntu-backup",
+        direction: "Chromatin structure, DNA-protein interactions, genome organization · 染色质结构、DNA-蛋白互作、基因组组织",
+        reason: "Mechanistic chromatin/protein-DNA backup; cancer relevance is indirect but useful for genome-regulation labs. / 偏染色质和蛋白-DNA 机制，癌症相关性间接，但可服务基因组调控方向。",
+        angle: "Connect protein purification, AP, point-mutant scanning, and interest in chromatin-linked cancer mechanisms. / 用蛋白纯化、AP、点突变扫描和染色质相关癌症机制兴趣切入。",
+        url: "https://www.ntu.edu.sg/sbs"
       }
     ];
 
     const list = document.querySelector("#supervisorList");
     const searchInput = document.querySelector("#searchInput");
 
+    const schoolLabels = {
+      NUS: "NUS supervisors / NUS 导师",
+      NTU: "NTU additional supervisors / NTU 新增备选导师"
+    };
+
+    function renderSchoolGroup(school, people) {
+      if (!people.length) return "";
+      return `
+        <div class="school-group" data-school="${school}">
+          <div class="school-heading">
+            <h3>${schoolLabels[school] || school}</h3>
+            <span>${people.length} candidates / ${people.length} 位候选</span>
+          </div>
+          ${people.map((person) => `
+            <article class="supervisor" data-school="${person.school}">
+              <div class="rank"><span>${person.school}</span>${person.rank}</div>
+              <div>
+                <h3><a href="${person.url}" target="_blank" rel="noreferrer">${person.name}</a></h3>
+                <div class="unit">${person.unit}</div>
+                <p class="direction">${person.direction}</p>
+              </div>
+              <div class="fit-box">
+                <span class="fit ${person.fitClass}">${person.fit}</span>
+                <span>${person.reason}</span>
+                <span><strong>Angle / 切入点:</strong> ${person.angle}</span>
+              </div>
+            </article>
+          `).join("")}
+        </div>
+      `;
+    }
+
     function renderSupervisors() {
       const query = searchInput.value.trim().toLowerCase();
       const filtered = supervisors.filter((person) => {
-        const haystack = [person.name, person.unit, person.fit, person.direction, person.reason, person.angle].join(" ").toLowerCase();
+        const haystack = [person.school, person.name, person.unit, person.fit, person.direction, person.reason, person.angle].join(" ").toLowerCase();
         return !query || haystack.includes(query);
       });
 
-      list.innerHTML = filtered.map((person) => `
-        <article class="supervisor">
-          <div class="rank">${person.rank}</div>
-          <div>
-            <h3><a href="${person.url}" target="_blank" rel="noreferrer">${person.name}</a></h3>
-            <div class="unit">${person.unit}</div>
-            <p class="direction">${person.direction}</p>
-          </div>
-          <div class="fit-box">
-            <span class="fit ${person.fitClass}">${person.fit}</span>
-            <span>${person.reason}</span>
-            <span><strong>Angle / 切入点:</strong> ${person.angle}</span>
-          </div>
-        </article>
-      `).join("");
+      list.innerHTML = ["NUS", "NTU"].map((school) => renderSchoolGroup(
+        school,
+        filtered.filter((person) => person.school === school)
+      )).join("");
     }
 
     searchInput.addEventListener("input", renderSupervisors);

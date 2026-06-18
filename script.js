@@ -1,5 +1,5 @@
 (function () {
-  const checkedDate = "2026-06-06";
+  const checkedDate = "2026-06-18";
   const recentWindow = "2021-2026";
   const officialSources = {
     nsf: {
@@ -22,8 +22,8 @@
   const searchedNames = {
     "Dr Derrick Ong Sek Tong": {
       nsf: "Derrick Ong Sek Tong",
-      arc: "Derrick Ong",
-      erc: "Derrick Ong"
+      arc: "Derrick Ong Sek Tong",
+      erc: "Derrick Ong Sek Tong"
     },
     "Dr Cheok Chit Fang": {
       nsf: "Cheok Chit Fang",
@@ -84,6 +84,96 @@
       nsf: "Dario Campana",
       arc: "Dario Campana",
       erc: "Dario Campana"
+    },
+    "Prof Ashok Venkitaraman": {
+      nsf: "Ashok Venkitaraman",
+      arc: "Ashok Venkitaraman",
+      erc: "Ashok Venkitaraman"
+    },
+    "Prof Yoshiaki Ito": {
+      nsf: "Yoshiaki Ito",
+      arc: "Yoshiaki Ito",
+      erc: "Yoshiaki Ito"
+    },
+    "Prof Chng Wee Joo": {
+      nsf: "Chng Wee Joo",
+      arc: "Chng Wee Joo",
+      erc: "Chng Wee Joo"
+    },
+    "Prof Paul MacAry": {
+      nsf: "Paul MacAry",
+      arc: "Paul MacAry",
+      erc: "Paul MacAry"
+    },
+    "A/Prof Veronique Angeli": {
+      nsf: "Veronique Angeli",
+      arc: "Veronique Angeli",
+      erc: "Veronique Angeli"
+    },
+    "Prof Lim Chwee Teck": {
+      nsf: "Lim Chwee Teck",
+      arc: "Lim Chwee Teck",
+      erc: "Lim Chwee Teck"
+    },
+    "Asst Prof Li Ren Kong": {
+      nsf: "Li Ren Kong",
+      arc: "Li Ren Kong",
+      erc: "Li Ren Kong"
+    },
+    "Asst Prof Jie Xiong": {
+      nsf: "Jie Xiong",
+      arc: "Jie Xiong",
+      erc: "Jie Xiong"
+    },
+    "Asst Prof Chuchu Wang": {
+      nsf: "Chuchu Wang",
+      arc: "Chuchu Wang",
+      erc: "Chuchu Wang"
+    },
+    "Asst Prof Hwei Ee Tan": {
+      nsf: "Hwei Ee Tan",
+      arc: "Hwei Ee Tan",
+      erc: "Hwei Ee Tan"
+    },
+    "Prof Joseph Sung": {
+      nsf: "Joseph Sung",
+      arc: "Joseph Sung",
+      erc: "Joseph Sung"
+    },
+    "Assoc Prof Su I-Hsin": {
+      nsf: "Su I-Hsin",
+      arc: "Su I-Hsin",
+      erc: "Su I-Hsin"
+    },
+    "Asst Prof Christine Cheung": {
+      nsf: "Christine Cheung",
+      arc: "Christine Cheung",
+      erc: "Christine Cheung"
+    },
+    "Assoc Prof Andrew Tan Nguan Soon": {
+      nsf: "Andrew Tan Nguan Soon",
+      arc: "Andrew Tan Nguan Soon",
+      erc: "Andrew Tan Nguan Soon"
+    },
+    "Asst Prof Kimberly Kline": {
+      nsf: "Kimberly Kline",
+      arc: "Kimberly Kline",
+      erc: "Kimberly Kline"
+    },
+    "Assoc Prof Koh Cheng Gee": {
+      nsf: "Koh Cheng Gee",
+      arc: "Koh Cheng Gee",
+      erc: "Koh Cheng Gee"
+    },
+    "Asst Prof Luo Dahai": {
+      nsf: "Luo Dahai",
+      arc: "Luo Dahai",
+      erc: "Luo Dahai"
+    },
+    "Prof Lars Nordenskiold": {
+      nsf: "Lars Nordenskiold",
+      arc: "Lars Nordenskiold",
+      erc: "Lars Nordenskiold"
     }
   };
 
@@ -101,9 +191,9 @@
     return {
       countRecent: { nsf: 0, arc: 0, erc: 0 },
       projects: [],
-      expirySummary: "No 2021-2026 NSF/ARC/ERC project end date found. / 未找到 2021-2026 NSF/ARC/ERC 公开项目到期时间。",
+      expirySummary: "No 2021-2026 NSF/ARC/ERC public award end date recorded in this dashboard. / 本 dashboard 未记录 2021-2026 NSF/ARC/ERC 公开项目到期时间。",
       checkedDate,
-      note: "Official NSF and ARC name searches returned no public PI records; ERC/CORDIS search found no countable ERC PI project. Publication-author or unrelated same-name hits are not counted. / NSF 与 ARC 官方姓名检索未返回公开 PI 记录；ERC/CORDIS 未找到可计入的 ERC PI 项目。论文作者或无法确认的同名结果不计入。",
+      note: "Official NSF/ARC/ERC links are provided for name-level verification; countable awards require clear PI/lead-investigator match by name, institution, and field. Unrelated same-name or publication-author hits are not counted. / 已提供 NSF/ARC/ERC 官方姓名检索链接；只有姓名、机构和领域均能确认 PI/lead investigator 身份时才计入。无法确认的同名或论文作者结果不计入。",
       sources: [
         { label: officialSources.nsf.label, name: officialSources.nsf.name, url: links.nsf },
         { label: officialSources.arc.label, name: officialSources.arc.name, url: links.arc },
@@ -181,6 +271,96 @@
       email: "paedc@nus.edu.sg",
       phone: "+65 6601 2666",
       source: "Public NUS-affiliated correspondence records"
+    },
+    "Prof Ashok Venkitaraman": {
+      email: "",
+      phone: "",
+      source: "No public contact recorded from current official source / 当前官方来源未记录公开联系方式"
+    },
+    "Prof Yoshiaki Ito": {
+      email: "",
+      phone: "",
+      source: "No public contact recorded from current official source / 当前官方来源未记录公开联系方式"
+    },
+    "Prof Chng Wee Joo": {
+      email: "",
+      phone: "",
+      source: "No public contact recorded from current official source / 当前官方来源未记录公开联系方式"
+    },
+    "Prof Paul MacAry": {
+      email: "micpam@nus.edu.sg",
+      phone: "",
+      source: "NUS Microbiology & Immunology profile"
+    },
+    "A/Prof Veronique Angeli": {
+      email: "",
+      phone: "",
+      source: "No public contact recorded from current official source / 当前官方来源未记录公开联系方式"
+    },
+    "Prof Lim Chwee Teck": {
+      email: "",
+      phone: "",
+      source: "No public contact recorded from current official source / 当前官方来源未记录公开联系方式"
+    },
+    "Asst Prof Li Ren Kong": {
+      email: "",
+      phone: "",
+      source: "No public contact recorded from current official source / 当前官方来源未记录公开联系方式"
+    },
+    "Asst Prof Jie Xiong": {
+      email: "",
+      phone: "",
+      source: "No public contact recorded from current official source / 当前官方来源未记录公开联系方式"
+    },
+    "Asst Prof Chuchu Wang": {
+      email: "",
+      phone: "",
+      source: "No public contact recorded from current official source / 当前官方来源未记录公开联系方式"
+    },
+    "Asst Prof Hwei Ee Tan": {
+      email: "",
+      phone: "",
+      source: "No public contact recorded from current official source / 当前官方来源未记录公开联系方式"
+    },
+    "Prof Joseph Sung": {
+      email: "",
+      phone: "",
+      source: "No public contact recorded from current official source / 当前官方来源未记录公开联系方式"
+    },
+    "Assoc Prof Su I-Hsin": {
+      email: "",
+      phone: "",
+      source: "No public contact recorded from current official source / 当前官方来源未记录公开联系方式"
+    },
+    "Asst Prof Christine Cheung": {
+      email: "",
+      phone: "",
+      source: "No public contact recorded from current official source / 当前官方来源未记录公开联系方式"
+    },
+    "Assoc Prof Andrew Tan Nguan Soon": {
+      email: "",
+      phone: "",
+      source: "No public contact recorded from current official source / 当前官方来源未记录公开联系方式"
+    },
+    "Asst Prof Kimberly Kline": {
+      email: "",
+      phone: "",
+      source: "No public contact recorded from current official source / 当前官方来源未记录公开联系方式"
+    },
+    "Assoc Prof Koh Cheng Gee": {
+      email: "",
+      phone: "",
+      source: "No public contact recorded from current official source / 当前官方来源未记录公开联系方式"
+    },
+    "Asst Prof Luo Dahai": {
+      email: "",
+      phone: "",
+      source: "No public contact recorded from current official source / 当前官方来源未记录公开联系方式"
+    },
+    "Prof Lars Nordenskiold": {
+      email: "",
+      phone: "",
+      source: "No public contact recorded from current official source / 当前官方来源未记录公开联系方式"
     }
   };
 
@@ -192,10 +372,32 @@
     const name = card.querySelector("h3 a")?.textContent?.trim() || "";
     return {
       name,
+      school: card.dataset.school || "",
       html: card.outerHTML,
       baseText: card.textContent.toLowerCase()
     };
   });
+
+  const schoolLabels = {
+    NUS: "NUS supervisors / NUS 导师",
+    NTU: "NTU additional supervisors / NTU 新增备选导师"
+  };
+
+  function renderGroupedCards(people) {
+    return ["NUS", "NTU"].map((school) => {
+      const group = people.filter((person) => person.school === school);
+      if (!group.length) return "";
+      return `
+        <div class="school-group" data-school="${school}">
+          <div class="school-heading">
+            <h3>${schoolLabels[school] || school}</h3>
+            <span>${group.length} candidates / ${group.length} 位候选</span>
+          </div>
+          ${group.map((person) => person.html).join("")}
+        </div>
+      `;
+    }).join("");
+  }
 
   function grantSearchText(name) {
     const signal = grantSignals[name];
@@ -227,9 +429,10 @@
     const contact = contactSignals[name];
     if (!contact) return "";
     const phone = contact.phone ? `<span class="contact-phone">${contact.phone}</span>` : "";
+    const email = contact.email ? `<a href="mailto:${contact.email}">${contact.email}</a>` : `<span class="contact-missing">No public email recorded / 未记录公开邮箱</span>`;
     return `
       <div class="contact-line" data-contact-for="${name}">
-        <a href="mailto:${contact.email}">${contact.email}</a>
+        ${email}
         ${phone}
         <span class="contact-source">${contact.source}</span>
       </div>
@@ -289,7 +492,7 @@
   function renderEnhancedSearch() {
     const query = searchInput.value.trim().toLowerCase();
     if (!query) {
-      supervisorList.innerHTML = supervisorCache.map((person) => person.html).join("");
+      supervisorList.innerHTML = renderGroupedCards(supervisorCache);
       enhanceFundingPanels();
       return;
     }
@@ -299,7 +502,7 @@
       return searchable.includes(query);
     });
 
-    supervisorList.innerHTML = filtered.map((person) => person.html).join("");
+    supervisorList.innerHTML = renderGroupedCards(filtered);
     enhanceFundingPanels();
   }
 
