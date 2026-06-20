@@ -479,29 +479,17 @@
     };
   });
 
-  const groupOrder = ["latest-nus", "latest-nni", "latest-duke", "latest-ntu", "previous"];
-  const groupLabels = {
-    "latest-nus": "NUS / NCIS / NUS-linked",
-    "latest-nni": "NNI / SingHealth Neuro-Oncology",
-    "latest-duke": "Duke-NUS / NCCS / Cancer & Stem Cell Biology",
-    "latest-ntu": "NTU / LKCMedicine",
-    previous: "Previous NUS/NTU Matches / 原 NUS/NTU 补充名单"
-  };
+  function priorityFromCard(person) {
+    const match = person.html.match(/<div class="rank"><span>FIT<\/span>(\d+)<\/div>/);
+    return match ? Number(match[1]) : Number.MAX_SAFE_INTEGER;
+  }
 
-  function renderGroupedCards(people) {
-    return groupOrder.map((groupKey) => {
-      const group = people.filter((person) => person.groupKey === groupKey);
-      if (!group.length) return "";
-      return `
-        <div class="school-group" data-group="${groupKey}">
-          <div class="school-heading">
-            <h3>${groupLabels[groupKey] || groupKey}</h3>
-            <span>${group.length} candidates / ${group.length} 位候选</span>
-          </div>
-          ${group.map((person) => person.html).join("")}
-        </div>
-      `;
-    }).join("");
+  function renderPriorityCards(people) {
+    return people
+      .slice()
+      .sort((a, b) => priorityFromCard(a) - priorityFromCard(b))
+      .map((person) => person.html)
+      .join("");
   }
 
   function grantSearchText(name) {
@@ -597,7 +585,7 @@
   function renderEnhancedSearch() {
     const query = searchInput.value.trim().toLowerCase();
     if (!query) {
-      supervisorList.innerHTML = renderGroupedCards(supervisorCache);
+      supervisorList.innerHTML = renderPriorityCards(supervisorCache);
       enhanceFundingPanels();
       return;
     }
@@ -607,7 +595,7 @@
       return searchable.includes(query);
     });
 
-    supervisorList.innerHTML = renderGroupedCards(filtered);
+    supervisorList.innerHTML = renderPriorityCards(filtered);
     enhanceFundingPanels();
   }
 
